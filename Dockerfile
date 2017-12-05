@@ -1,14 +1,15 @@
 FROM debian:8
 
-MAINTAINER Dave Gillies <dave.gillies@gmail.com>
+LABEL maintainer="Dave Gillies <dave.gillies@gmail.com>" 
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV CURRENT_VERSION 2017-12-04
-
+ENV lms_version 7.9.1
+ENV lms_os deb
 
 # Update system and install dependencies
 RUN apt-get -qq update && \
-  apt-get -qq -y install curl \
+    apt-get -qq -y install curl \
     perl faad flac lame sox libio-socket-ssl-perl \
     locales python-dev python-pip cpanminus git python-lxml
 
@@ -23,7 +24,7 @@ RUN pip install git+https://github.com/simon-weber/gmusicapi.git@develop && \
 
 # Fetch and install Logitech Media Server
 RUN curl -s -o /tmp/logitechmediaserver.deb \
-    $(curl -s "http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=deb") && \
+    $(curl -s "http://www.mysqueezebox.com/update/?version=${lms_version}&revision=1&geturl=1&os=${lms_os}") && \
     dpkg --install /tmp/logitechmediaserver.deb ; \
     rm -f /tmp/logitechmediaserver.deb
 
