@@ -1,5 +1,5 @@
 # Docker Squeezebox Server
-![](https://img.shields.io/badge/logitechmediaserver-v7.9.1-007EC7.svg?style=flat-square) ![](https://img.shields.io/docker/automated/davewongillies/squeezebox.svg?maxAge=2592000) ![](https://img.shields.io/docker/build/davewongillies/squeezebox.svg?maxAge=2592000)
+![](https://img.shields.io/badge/logitechmediaserver-v7.9.1-007EC7.svg?style=flat-square) ![](https://img.shields.io/docker/automated/davewongillies/squeezebox.svg) ![](https://img.shields.io/docker/build/davewongillies/squeezebox.svg)
 
 OS: Debian 8 (official)
 Installed:
