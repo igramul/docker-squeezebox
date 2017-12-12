@@ -3,9 +3,10 @@ FROM debian:8
 LABEL maintainer="Dave Gillies <dave.gillies@gmail.com>" 
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV CURRENT_VERSION 2017-12-04
+ENV CURRENT_VERSION 2017-12-11
 ENV lms_version 7.9.1
-ENV lms_os deb
+# `debamd64` debs are still `all` arch
+ENV lms_os debamd64
 
 # Update system and install dependencies
 RUN apt-get -qq update && \
