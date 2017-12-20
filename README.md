@@ -16,3 +16,13 @@ Installed:
   -v <music_dir>:/share/Music \
   davewongillies/squeezebox:latest
 ```
+
+If you've got `docker-compose` installed:
+```
+# docker-compose up -d
+```
+
+By default it looks for `config` and `music` directories in the current directory. To start with other directories:
+```
+# docker-compose up -d -e LMS_CONFIG_DIR=<path_to_config_directory> -e LMS_MUSIC_DIR=<path_to_music_directory>
+```

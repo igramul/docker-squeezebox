@@ -1,14 +1,14 @@
 version: '3'
 services:
   logitechmediaserver:
-  # --name <name_for_container> \
+    env_file: .env
     image: "davewongillies/squeezebox:latest"
-    network_mode: "host"
+    network_mode: "${LMS_NETWORK_MODE}"
     ports:
       - 3483:3483
       - 9000:9000
       - 9090:9090
       - 3483:3483/udp
     volumes:
-      - ./config:/config
-      - ./share:/share/Music
+      - "${LMS_CONFIG_DIR}:/config:rw"
+      - "${LMS_MUSIC_DIR}:/share/Music:rw"
