@@ -1,10 +1,10 @@
 # Docker Squeezebox Server
 ![](https://img.shields.io/badge/logitechmediaserver-v7.9.1-007EC7.svg?style=flat-square) ![](https://img.shields.io/docker/automated/davewongillies/squeezebox.svg) ![](https://img.shields.io/docker/build/davewongillies/squeezebox.svg)
 
-OS: Debian 8 (official)
+OS: Ubuntu Xenial 16.04 (official)
 Installed:
  * [Logitech Media Server 7.9.1](http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=deb)
- * [Unofficial Google Music API](https://github.com/simon-weber/gmusicapi) python module
+ * [gmusicapi 11.0.0](https://github.com/simon-weber/gmusicapi) python module
 
 ## Running the container
 ```

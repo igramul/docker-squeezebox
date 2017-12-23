@@ -1,6 +1,6 @@
 version: '3'
 services:
-  logitechmediaserver:
+  lms:
     env_file: .env
     image: "davewongillies/squeezebox:latest"
     network_mode: "${LMS_NETWORK_MODE}"
