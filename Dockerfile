@@ -1,12 +1,14 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 LABEL maintainer="Dave Gillies <dave.gillies@gmail.com>" 
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV CURRENT_VERSION 2017-12-23
-ENV lms_version 7.9.1
+ENV lms_version 7.9.2
 # `debamd64` debs are still `all` arch
-ENV lms_os debamd64
+ENV lms_os all
+ENV lms_ref b84cade9c077104144ee60085c2a9a07786b40d9
+ENV lms_ts 1554450933
 
 # Update system and install dependencies
 RUN apt-get update && \
@@ -20,11 +22,11 @@ RUN locale-gen en_US.UTF-8 && \
     /usr/sbin/update-locale LANG=en_US.UTF-8
 
 # Install Google Music dependencies
-RUN pip install --no-cache-dir gmusicapi==11.0.0
+RUN pip install --no-cache-dir gmusicapi==12.0.0
 
 # Fetch and install Logitech Media Server
 RUN curl -s -o /tmp/logitechmediaserver.deb \
-    $(curl -s "http://www.mysqueezebox.com/update/?version=${lms_version}&revision=1&geturl=1&os=${lms_os}") && \
+     http://downloads.slimdevices.com/nightly/7.9/sc/${lms_ref}/logitechmediaserver_${lms_version}~${lms_ts}_${lms_os}.deb && \
     dpkg --install /tmp/logitechmediaserver.deb ; \
     rm -f /tmp/logitechmediaserver.deb
 
