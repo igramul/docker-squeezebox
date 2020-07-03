@@ -2,7 +2,7 @@ version: '3'
 services:
   lms:
     env_file: .env
-    image: "davewongillies/squeezebox:latest"
+    image: "igramul/squeezebox:latest"
     network_mode: "${LMS_NETWORK_MODE}"
     ports:
       - 3483:3483
@@ -11,4 +11,4 @@ services:
       - 3483:3483/udp
     volumes:
       - "${LMS_CONFIG_DIR}:/config:rw"
-      - "${LMS_MUSIC_DIR}:/share/Music:rw"
+      - "${LMS_MUSIC_DIR}:/Mediathek:rw"
